@@ -6,7 +6,11 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "start": "cross-env AI_MODE=gemini node src/server.js",
+    "start:mock": "cross-env AI_MODE=mock node src/server.js",
+    "test:agent": "cross-env AI_MODE=mock node src/evaluation/runEvaluation.js",
+    "test:agent:e2e": "cross-env AI_MODE=mock node src/evaluation/runAgentEvaluation.js"
   },
   "keywords": [],
   "author": "",
@@ -18,9 +22,11 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "tailwindcss": "^4.3.3"
+    "tailwindcss": "^4.3.3",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1"
   }

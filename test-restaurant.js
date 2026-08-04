@@ -1,4 +1,4 @@
-import { searchRestaurant } from './src/services/restaurant.js';
+import { searchRestaurant } from './src/tools/restaurant.js';
 
 const restaurants = await searchRestaurant('Paris');
 

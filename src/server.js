@@ -5,8 +5,6 @@ import cors from 'cors';
 
 import chatRouter from './routes/chat.js';
 
-import { GoogleGenAI } from '@google/genai';
-
 const app = express();
 
 app.use(cors());

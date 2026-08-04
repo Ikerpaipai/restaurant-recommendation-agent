@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { getCoordinates } from './geocoding.js';
+import { geocodeCity } from './geocoding.js';
 
-export async function getWeather(city) {
-  const coordinates = await getCoordinates(city);
+export async function getWeather({ city }) {
+  const coordinates = await geocodeCity(city);
 
   const response = await axios.get('https://api.open-meteo.com/v1/forecast', {
     params: {
